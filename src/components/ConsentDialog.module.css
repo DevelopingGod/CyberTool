@@ -1,0 +1,130 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 20, 16, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 50;
+  animation: ng-fade-in var(--ng-duration-fast) var(--ng-ease) both;
+}
+
+@keyframes ng-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog {
+  width: min(420px, 90vw);
+  padding: var(--ng-space-5);
+  border-radius: var(--ng-radius-lg);
+  background: var(--ng-bg-elevated);
+  border: 1px solid var(--ng-border);
+  box-shadow: var(--ng-shadow-md);
+  animation: ng-pop-in var(--ng-duration-mid) var(--ng-ease) both;
+}
+
+@keyframes ng-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .dialog {
+    animation: none;
+  }
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-severity-neutral-bg);
+  color: var(--ng-brand-500);
+  margin-bottom: var(--ng-space-3);
+}
+
+.title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--ng-text-primary);
+}
+
+.description {
+  margin-top: var(--ng-space-2);
+  font-size: 0.88rem;
+  color: var(--ng-text-secondary);
+  line-height: 1.5;
+}
+
+.note {
+  margin-top: var(--ng-space-3);
+  padding: var(--ng-space-3);
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-surface-muted);
+  font-size: 0.78rem;
+  color: var(--ng-text-muted);
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-2);
+  margin-top: var(--ng-space-4);
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  padding: 9px 16px;
+  border-radius: var(--ng-radius-pill);
+  border: none;
+  background: var(--ng-gradient-primary);
+  color: var(--ng-text-on-brand);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.secondaryButton {
+  padding: 9px 16px;
+  border-radius: var(--ng-radius-pill);
+  border: 1px solid var(--ng-border-strong);
+  background: transparent;
+  color: var(--ng-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.linkButton {
+  padding: 9px 8px;
+  border: none;
+  background: none;
+  color: var(--ng-brand-500);
+  font-size: 0.82rem;
+  font-weight: 650;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.queueNote {
+  margin-top: var(--ng-space-3);
+  font-size: 0.72rem;
+  color: var(--ng-text-muted);
+}

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f3d2e" />
+      <stop offset="55%" stop-color="#12855c" />
+      <stop offset="100%" stop-color="#3ee08c" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Shield silhouette -->
+  <path
+    d="M256 26 L430 92 C430 92 434 240 430 288 C420 386 340 452 256 486 C172 452 92 386 82 288 C78 240 82 92 82 92 Z"
+    fill="url(#shieldGrad)"
+  />
+  <path
+    d="M256 26 L430 92 C430 92 434 240 430 288 C420 386 340 452 256 486 Z"
+    fill="url(#glow)"
+    opacity="0.5"
+  />
+
+  <!-- Network node motif: three nodes joined by lines, centered in the shield -->
+  <g stroke="#eafff3" stroke-width="10" stroke-linecap="round">
+    <line x1="256" y1="196" x2="188" y2="300" />
+    <line x1="256" y1="196" x2="324" y2="300" />
+    <line x1="188" y1="300" x2="324" y2="300" />
+  </g>
+  <g fill="#eafff3">
+    <circle cx="256" cy="196" r="26" />
+    <circle cx="188" cy="300" r="22" />
+    <circle cx="324" cy="300" r="22" />
+  </g>
+  <g fill="#0f3d2e">
+    <circle cx="256" cy="196" r="10" />
+    <circle cx="188" cy="300" r="8" />
+    <circle cx="324" cy="300" r="8" />
+  </g>
+</svg>

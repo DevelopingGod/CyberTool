@@ -1,0 +1,46 @@
+.row {
+  display: flex;
+  gap: var(--ng-space-2);
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ng-space-2);
+  padding: 8px 14px;
+  border-radius: var(--ng-radius-sm);
+  border: 1px solid var(--ng-border-strong);
+  background: var(--ng-surface);
+  color: var(--ng-text-secondary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--ng-duration-fast) var(--ng-ease), box-shadow var(--ng-duration-fast) var(--ng-ease),
+    background var(--ng-duration-fast) var(--ng-ease), color var(--ng-duration-fast) var(--ng-ease);
+}
+
+.button:hover:not(:disabled) {
+  color: var(--ng-text-primary);
+  box-shadow: var(--ng-shadow-sm);
+  transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  .button:hover:not(:disabled),
+  .button:active:not(:disabled) {
+    transform: none;
+  }
+}

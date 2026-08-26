@@ -1,0 +1,262 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-6);
+  max-width: 880px;
+}
+
+.section {
+  padding: var(--ng-space-5);
+  border-radius: var(--ng-radius-lg);
+  background: var(--ng-surface);
+  border: 1px solid var(--ng-border);
+  box-shadow: var(--ng-shadow-sm);
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ng-text-primary);
+  margin-bottom: var(--ng-space-3);
+}
+
+.sectionIntro {
+  font-size: 0.85rem;
+  color: var(--ng-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--ng-space-4);
+  max-width: 74ch;
+}
+
+.themeRow {
+  display: flex;
+  gap: var(--ng-space-2);
+}
+
+.themeOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--ng-radius-sm);
+  border: 1px solid var(--ng-border-strong);
+  background: var(--ng-surface-muted);
+  color: var(--ng-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.themeOption[data-active="true"] {
+  background: var(--ng-gradient-primary);
+  color: var(--ng-text-on-brand);
+  border-color: transparent;
+}
+
+.permissionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-3);
+}
+
+.permissionRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-3);
+  padding: var(--ng-space-3);
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-surface-muted);
+  flex-wrap: wrap;
+}
+
+.permissionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-surface);
+  color: var(--ng-brand-500);
+}
+
+.permissionInfo {
+  flex: 1;
+  min-width: 220px;
+}
+
+.permissionName {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ng-text-primary);
+}
+
+.permissionDescription {
+  margin-top: 2px;
+  font-size: 0.78rem;
+  color: var(--ng-text-muted);
+  line-height: 1.5;
+}
+
+.permissionControl {
+  display: inline-flex;
+  border-radius: var(--ng-radius-pill);
+  border: 1px solid var(--ng-border-strong);
+  overflow: hidden;
+}
+
+.permissionOption {
+  padding: 7px 12px;
+  border: none;
+  background: var(--ng-surface);
+  color: var(--ng-text-secondary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.permissionOption[data-active="true"] {
+  background: var(--ng-brand-500);
+  color: var(--ng-text-on-brand);
+}
+
+.dangerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: var(--ng-radius-pill);
+  border: 1px solid var(--ng-severity-risk-border);
+  background: var(--ng-severity-risk-bg);
+  color: var(--ng-severity-risk);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--ng-duration-fast) var(--ng-ease), box-shadow var(--ng-duration-fast) var(--ng-ease);
+}
+
+.dangerButton[data-tone="neutral"] {
+  border-color: var(--ng-border-strong);
+  background: var(--ng-surface-muted);
+  color: var(--ng-text-secondary);
+}
+
+.dangerButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--ng-shadow-sm);
+}
+
+.dangerButton:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+.dangerButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.backgroundRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-3);
+  padding: var(--ng-space-3);
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-surface-muted);
+  flex-wrap: wrap;
+}
+
+.backgroundInfo {
+  flex: 1;
+  min-width: 200px;
+}
+
+.frequencySelect {
+  padding: 8px 12px;
+  border-radius: var(--ng-radius-sm);
+  border: 1px solid var(--ng-border-strong);
+  background: var(--ng-surface);
+  color: var(--ng-text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.frequencySelect:disabled {
+  opacity: 0.5;
+}
+
+/* Animated toggle switch, used for the background-scan enable control. */
+.toggleSwitch {
+  all: unset;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 44px;
+  height: 26px;
+  border-radius: var(--ng-radius-pill);
+  background: var(--ng-border-strong);
+  position: relative;
+  flex: none;
+  transition: background var(--ng-duration-mid) var(--ng-ease);
+}
+
+.toggleSwitch[data-active="true"] {
+  background: var(--ng-brand-500);
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ng-surface);
+  box-shadow: var(--ng-shadow-sm);
+  transition: transform var(--ng-duration-mid) var(--ng-ease);
+}
+
+.toggleSwitch[data-active="true"] .toggleThumb {
+  transform: translateX(18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggleSwitch,
+  .toggleThumb,
+  .dangerButton {
+    transition: none;
+  }
+  .dangerButton:hover:not(:disabled),
+  .dangerButton:active:not(:disabled) {
+    transform: none;
+  }
+}
+
+.aboutBox {
+  display: flex;
+  gap: var(--ng-space-3);
+  align-items: flex-start;
+}
+
+.aboutIcon {
+  color: var(--ng-brand-500);
+  margin-top: 2px;
+}
+
+.aboutVersion {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ng-text-primary);
+  margin-bottom: var(--ng-space-2);
+}
+
+.aboutCopy {
+  font-size: 0.82rem;
+  color: var(--ng-text-secondary);
+  line-height: 1.6;
+  max-width: 68ch;
+  margin-bottom: var(--ng-space-2);
+}

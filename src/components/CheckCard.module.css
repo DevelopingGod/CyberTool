@@ -1,0 +1,164 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-3);
+  padding: var(--ng-space-4);
+  border-radius: var(--ng-radius-md);
+  background: var(--ng-surface);
+  border: 1px solid var(--ng-border);
+  border-top: 4px solid var(--ng-severity-neutral);
+  box-shadow: var(--ng-shadow-sm);
+  animation: ng-card-in var(--ng-duration-slow) var(--ng-ease) both;
+  transition: box-shadow var(--ng-duration-fast) var(--ng-ease), transform var(--ng-duration-fast) var(--ng-ease);
+}
+
+.card[data-clickable="true"] {
+  cursor: pointer;
+}
+
+.card[data-clickable="true"]:hover,
+.card[data-clickable="true"]:focus-visible {
+  box-shadow: var(--ng-shadow-md);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.card[data-tone="ok"] {
+  border-top-color: var(--ng-severity-ok);
+}
+.card[data-tone="caution"] {
+  border-top-color: var(--ng-severity-caution);
+}
+.card[data-tone="atRisk"] {
+  border-top-color: var(--ng-severity-risk);
+}
+.card[data-tone="neutral"] {
+  border-top-color: var(--ng-severity-neutral);
+}
+
+@keyframes ng-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ng-space-3);
+}
+
+.categoryIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-surface-muted);
+  color: var(--ng-brand-500);
+}
+
+.titleBlock {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 0.98rem;
+  font-weight: 650;
+  color: var(--ng-text-primary);
+}
+
+.verdict {
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--ng-text-secondary);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--ng-radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.badge[data-tone="ok"] {
+  color: var(--ng-severity-ok);
+  background: var(--ng-severity-ok-bg);
+  border-color: var(--ng-severity-ok-border);
+}
+.badge[data-tone="caution"] {
+  color: var(--ng-severity-caution);
+  background: var(--ng-severity-caution-bg);
+  border-color: var(--ng-severity-caution-border);
+}
+.badge[data-tone="atRisk"] {
+  color: var(--ng-severity-risk);
+  background: var(--ng-severity-risk-bg);
+  border-color: var(--ng-severity-risk-border);
+}
+.badge[data-tone="neutral"] {
+  color: var(--ng-severity-neutral);
+  background: var(--ng-severity-neutral-bg);
+  border-color: var(--ng-severity-neutral-border);
+}
+
+.permissionRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-2);
+  padding: var(--ng-space-2) var(--ng-space-3);
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-severity-neutral-bg);
+  color: var(--ng-text-secondary);
+  font-size: 0.82rem;
+}
+
+.grantButton {
+  margin-left: auto;
+  padding: 5px 12px;
+  border-radius: var(--ng-radius-pill);
+  border: 1px solid var(--ng-brand-400);
+  background: var(--ng-brand-100);
+  color: var(--ng-brand-700);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.grantButton:hover {
+  background: var(--ng-brand-200);
+}
+
+.detailButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 8px 2px 0;
+  border: none;
+  border-top: 1px solid var(--ng-border);
+  background: none;
+  color: var(--ng-brand-500);
+  font-size: 0.82rem;
+  font-weight: 650;
+  cursor: pointer;
+}

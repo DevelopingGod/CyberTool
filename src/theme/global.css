@@ -1,0 +1,79 @@
+@import "./tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ng-bg);
+  color: var(--ng-text-primary);
+  font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--ng-duration-mid) var(--ng-ease), color var(--ng-duration-mid) var(--ng-ease);
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--ng-brand-500);
+}
+
+::selection {
+  background: var(--ng-brand-300);
+  color: var(--ng-brand-900);
+}
+
+/* Themed scrollbar (WebView2 is Chromium-based, so the `::-webkit-scrollbar`
+   family works) - applied globally so any scrolling surface (main content,
+   dialogs) matches the app's theme instead of the OS default. Firefox-style
+   `scrollbar-color`/`scrollbar-width` are set too for completeness, though
+   WebView2 is the only engine this app ships on. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ng-border-strong) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--ng-border-strong);
+  border-radius: var(--ng-radius-pill);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ng-brand-400);
+}
+
+/* Respect reduced-motion preference globally: kill non-essential motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,179 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-5);
+  max-width: 760px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: var(--ng-radius-pill);
+  border: 1px solid var(--ng-border-strong);
+  background: var(--ng-surface);
+  color: var(--ng-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background: var(--ng-surface-muted);
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-4);
+  padding: var(--ng-space-6);
+  border-radius: var(--ng-radius-lg);
+  color: var(--ng-text-on-brand);
+  box-shadow: var(--ng-shadow-md);
+  background: var(--ng-gradient-primary);
+}
+
+.banner[data-tone="ok"] {
+  background: var(--ng-gradient-banner-safe);
+}
+.banner[data-tone="caution"] {
+  background: var(--ng-gradient-banner-caution);
+}
+.banner[data-tone="atRisk"] {
+  background: var(--ng-gradient-banner-risk);
+}
+
+.bannerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.bannerEyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(242, 255, 248, 0.75);
+}
+
+.bannerTitle {
+  margin-top: 4px;
+  font-size: 1.5rem;
+  font-weight: 750;
+}
+
+.bannerSeverity {
+  margin-top: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(242, 255, 248, 0.9);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-3);
+}
+
+.sectionTitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.78rem;
+  color: var(--ng-text-muted);
+}
+
+.verdict {
+  font-size: 1.05rem;
+  font-weight: 550;
+  color: var(--ng-text-primary);
+  padding: var(--ng-space-4);
+  background: var(--ng-surface);
+  border: 1px solid var(--ng-border);
+  border-radius: var(--ng-radius-md);
+}
+
+.findingsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-3);
+}
+
+.finding {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--ng-space-4);
+  padding: var(--ng-space-4);
+  border-radius: var(--ng-radius-md);
+  background: var(--ng-surface);
+  border: 1px solid var(--ng-border);
+}
+
+.findingLabel {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ng-text-primary);
+}
+
+.findingDetail {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--ng-text-secondary);
+  word-break: break-word;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: var(--ng-radius-pill);
+  border: 1px solid var(--ng-brand-400);
+  background: var(--ng-brand-100);
+  color: var(--ng-brand-700);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.actionButton:hover {
+  background: var(--ng-brand-200);
+}
+
+.remediationBox {
+  display: flex;
+  gap: var(--ng-space-3);
+  align-items: flex-start;
+  padding: var(--ng-space-4);
+  border-radius: var(--ng-radius-md);
+  background: var(--ng-severity-caution-bg);
+  color: var(--ng-severity-caution);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.dataSource {
+  font-size: 0.82rem;
+  color: var(--ng-text-muted);
+  padding: var(--ng-space-3) var(--ng-space-4);
+  background: var(--ng-surface-muted);
+  border-radius: var(--ng-radius-sm);
+}
+
+.empty {
+  color: var(--ng-text-muted);
+  font-size: 0.9rem;
+}

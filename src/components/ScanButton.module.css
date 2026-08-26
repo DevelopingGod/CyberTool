@@ -1,0 +1,71 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ng-space-2);
+  padding: 13px 22px;
+  border: none;
+  border-radius: var(--ng-radius-pill);
+  background: var(--ng-gradient-primary);
+  color: var(--ng-text-on-brand);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--ng-shadow-glow);
+  overflow: visible;
+  transition: transform var(--ng-duration-fast) var(--ng-ease);
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.spinner {
+  animation: ng-spin 1s linear infinite;
+}
+
+@keyframes ng-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulsing ring while a scan is running - purposeful, not decorative: it
+   communicates "work is happening" the way the progress text alone can't
+   at a glance. */
+.ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  border: 2px solid var(--ng-brand-300);
+  opacity: 0;
+}
+
+.button[data-scanning="true"] .ring {
+  animation: ng-button-pulse 1.6s var(--ng-ease) infinite;
+}
+
+@keyframes ng-button-pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+  .button[data-scanning="true"] .ring {
+    animation: none;
+    opacity: 0.3;
+  }
+}

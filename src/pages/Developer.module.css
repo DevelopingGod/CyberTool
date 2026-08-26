@@ -1,0 +1,115 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ng-space-5);
+  max-width: 640px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-4);
+  padding: var(--ng-space-6);
+  border-radius: var(--ng-radius-lg);
+  background: var(--ng-gradient-primary);
+  color: var(--ng-text-on-brand);
+  box-shadow: var(--ng-shadow-md);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.name {
+  font-size: 1.35rem;
+  font-weight: 750;
+}
+
+.role {
+  margin-top: 2px;
+  font-size: 0.9rem;
+  color: rgba(242, 255, 248, 0.85);
+}
+
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--ng-space-3);
+}
+
+.linkCard {
+  display: flex;
+  align-items: center;
+  gap: var(--ng-space-3);
+  padding: var(--ng-space-4);
+  border-radius: var(--ng-radius-md);
+  background: var(--ng-surface);
+  border: 1px solid var(--ng-border);
+  box-shadow: var(--ng-shadow-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: box-shadow var(--ng-duration-fast) var(--ng-ease), transform var(--ng-duration-fast) var(--ng-ease);
+}
+
+.linkCard:hover {
+  box-shadow: var(--ng-shadow-md);
+  transform: translateY(-1px);
+}
+
+.linkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: var(--ng-radius-sm);
+  background: var(--ng-surface-muted);
+  color: var(--ng-brand-500);
+}
+
+.linkLabel {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--ng-text-primary);
+}
+
+.linkDescription {
+  margin-top: 2px;
+  font-size: 0.82rem;
+  color: var(--ng-text-secondary);
+}
+
+.aboutBox {
+  display: flex;
+  gap: var(--ng-space-3);
+  padding: var(--ng-space-4) var(--ng-space-5);
+  border-radius: var(--ng-radius-md);
+  background: var(--ng-surface-muted);
+  border: 1px solid var(--ng-border);
+}
+
+.aboutIcon {
+  color: var(--ng-brand-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.aboutTitle {
+  font-weight: 700;
+  color: var(--ng-text-primary);
+  margin-bottom: 4px;
+}
+
+.aboutCopy {
+  font-size: 0.88rem;
+  color: var(--ng-text-secondary);
+  line-height: 1.5;
+}

@@ -1,0 +1,159 @@
+/*
+  NetGuard design tokens.
+
+  Single source of truth for color, gradient, spacing, radius and motion
+  values. Components read these CSS custom properties instead of hard-coded
+  hex codes. Light values live on :root; dark values are re-declared under
+  the two selectors below so that both an explicit user choice
+  (`[data-theme="dark"]`) and the OS-level "system" preference
+  (`prefers-color-scheme: dark`) are honored, per NetGuard's Appearance
+  setting (System / Light / Dark).
+*/
+
+:root {
+  color-scheme: light;
+
+  /* ---- Brand gradient: deep teal-green -> bright accent green ---- */
+  --ng-brand-900: #0b2f24;
+  --ng-brand-700: #0f5c3f;
+  --ng-brand-500: #16915c;
+  --ng-brand-400: #2fb579;
+  --ng-brand-300: #5fd39a;
+  --ng-brand-200: #a6ecc4;
+  --ng-brand-100: #e3faee;
+
+  --ng-gradient-primary: linear-gradient(135deg, var(--ng-brand-900) 0%, var(--ng-brand-700) 45%, var(--ng-brand-400) 100%);
+  --ng-gradient-banner-safe: linear-gradient(120deg, #0b3a2a 0%, #157a4c 55%, #38c988 100%);
+  --ng-gradient-banner-caution: linear-gradient(120deg, #4a3208 0%, #9a6a10 55%, #eaa53a 100%);
+  --ng-gradient-banner-risk: linear-gradient(120deg, #4a0f0f 0%, #9c1f1f 55%, #e6503f 100%);
+
+  /* ---- Neutral surfaces ---- */
+  --ng-bg: #f4faf6;
+  --ng-bg-elevated: #ffffff;
+  --ng-surface: #ffffff;
+  --ng-surface-muted: #eef6f1;
+  --ng-border: #d9e8df;
+  --ng-border-strong: #bfd8ca;
+
+  --ng-text-primary: #0e2019;
+  --ng-text-secondary: #3f5c50;
+  --ng-text-muted: #6b8377;
+  --ng-text-on-brand: #f2fff8;
+
+  /* ---- Severity system: green / orange / red, each with light + dark
+     variants meeting accessible contrast against their surfaces ---- */
+  --ng-severity-ok: #157a4c;
+  --ng-severity-ok-bg: #e4f7ec;
+  --ng-severity-ok-border: #9adcb8;
+
+  --ng-severity-caution: #a05a05;
+  --ng-severity-caution-bg: #fdf1de;
+  --ng-severity-caution-border: #f0c986;
+
+  --ng-severity-risk: #b4291f;
+  --ng-severity-risk-bg: #fdeae8;
+  --ng-severity-risk-border: #f1a89f;
+
+  --ng-severity-neutral: #57616a;
+  --ng-severity-neutral-bg: #eef1f3;
+  --ng-severity-neutral-border: #ced7dd;
+
+  /* ---- Elevation ---- */
+  --ng-shadow-sm: 0 1px 2px rgba(14, 32, 25, 0.06), 0 1px 1px rgba(14, 32, 25, 0.04);
+  --ng-shadow-md: 0 6px 20px rgba(14, 32, 25, 0.08), 0 2px 6px rgba(14, 32, 25, 0.06);
+  --ng-shadow-glow: 0 0 0 1px rgba(47, 181, 121, 0.18), 0 8px 28px rgba(22, 145, 92, 0.18);
+
+  /* ---- Radii / spacing scale ---- */
+  --ng-radius-sm: 8px;
+  --ng-radius-md: 14px;
+  --ng-radius-lg: 20px;
+  --ng-radius-pill: 999px;
+
+  --ng-space-1: 4px;
+  --ng-space-2: 8px;
+  --ng-space-3: 12px;
+  --ng-space-4: 16px;
+  --ng-space-5: 24px;
+  --ng-space-6: 32px;
+  --ng-space-7: 48px;
+
+  /* ---- Motion ---- */
+  --ng-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ng-duration-fast: 140ms;
+  --ng-duration-mid: 260ms;
+  --ng-duration-slow: 480ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --ng-bg: #0c1713;
+    --ng-bg-elevated: #12211b;
+    --ng-surface: #13241d;
+    --ng-surface-muted: #1a2e25;
+    --ng-border: #23392e;
+    --ng-border-strong: #305040;
+
+    --ng-text-primary: #eafff3;
+    --ng-text-secondary: #b7d2c3;
+    --ng-text-muted: #83a294;
+    --ng-text-on-brand: #f2fff8;
+
+    --ng-severity-ok: #4fdb98;
+    --ng-severity-ok-bg: #103826;
+    --ng-severity-ok-border: #1f6e49;
+
+    --ng-severity-caution: #f2b854;
+    --ng-severity-caution-bg: #3a2a0c;
+    --ng-severity-caution-border: #7a5716;
+
+    --ng-severity-risk: #ff8a7a;
+    --ng-severity-risk-bg: #3a1512;
+    --ng-severity-risk-border: #7a2b23;
+
+    --ng-severity-neutral: #a9b6bd;
+    --ng-severity-neutral-bg: #1c2429;
+    --ng-severity-neutral-border: #3a454c;
+
+    --ng-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --ng-shadow-md: 0 10px 26px rgba(0, 0, 0, 0.45);
+    --ng-shadow-glow: 0 0 0 1px rgba(79, 219, 152, 0.22), 0 0 28px rgba(79, 219, 152, 0.16);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ng-bg: #0c1713;
+  --ng-bg-elevated: #12211b;
+  --ng-surface: #13241d;
+  --ng-surface-muted: #1a2e25;
+  --ng-border: #23392e;
+  --ng-border-strong: #305040;
+
+  --ng-text-primary: #eafff3;
+  --ng-text-secondary: #b7d2c3;
+  --ng-text-muted: #83a294;
+  --ng-text-on-brand: #f2fff8;
+
+  --ng-severity-ok: #4fdb98;
+  --ng-severity-ok-bg: #103826;
+  --ng-severity-ok-border: #1f6e49;
+
+  --ng-severity-caution: #f2b854;
+  --ng-severity-caution-bg: #3a2a0c;
+  --ng-severity-caution-border: #7a5716;
+
+  --ng-severity-risk: #ff8a7a;
+  --ng-severity-risk-bg: #3a1512;
+  --ng-severity-risk-border: #7a2b23;
+
+  --ng-severity-neutral: #a9b6bd;
+  --ng-severity-neutral-bg: #1c2429;
+  --ng-severity-neutral-border: #3a454c;
+
+  --ng-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --ng-shadow-md: 0 10px 26px rgba(0, 0, 0, 0.45);
+  --ng-shadow-glow: 0 0 0 1px rgba(79, 219, 152, 0.22), 0 0 28px rgba(79, 219, 152, 0.16);
+}
