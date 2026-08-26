@@ -45,7 +45,6 @@ Every check is a small, independent, rule-based Rust module — "agentic" in the
 - [Feature tour](#feature-tour)
 - [The 17 check-agents](#the-17-check-agents)
 - [The permission model](#the-permission-model-the-part-we-care-about-most)
-- [Screenshots](#screenshots)
 - [Getting started](#getting-started)
 - [Architecture at a glance](#architecture-at-a-glance)
 - [Tech stack](#tech-stack)
@@ -139,14 +138,6 @@ Flip a permission off in Settings and the **very next scan** re-blocks that chec
 
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=transparent&color=3DDC84&height=2&section=header" width="100%" />
-</div>
-
-## Screenshots
-
-<div align="center">
-
-*(drop your own screenshots into `docs/screenshots/` and reference them here — e.g. `docs/screenshots/dashboard.png`, `docs/screenshots/check-detail.png`, `docs/screenshots/settings.png`)*
-
 </div>
 
 ## Getting started
