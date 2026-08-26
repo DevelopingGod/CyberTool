@@ -193,7 +193,7 @@ npm run tauri build    # produces the installer under src-tauri/target/release/b
                  permissions.json · history.json · background.json
 ```
 
-Every check implements one shared `SecurityCheck` trait; pure parsing/evaluation logic is unit-tested separately from the OS-interaction shell. Full details live in [`CLAUDE.md`](./CLAUDE.md) (architecture reference) and [`DECISIONS.md`](./DECISIONS.md) (every non-obvious judgment call, with the *why*).
+Every check implements one shared `SecurityCheck` trait; pure parsing/evaluation logic is unit-tested separately from the OS-interaction shell. Full details of every non-obvious judgment call, with the *why*, live in [`DECISIONS.md`](./DECISIONS.md).
 
 ## Tech stack
 
